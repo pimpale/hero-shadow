@@ -26,9 +26,9 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class MainLoop extends JPanel implements MouseListener, KeyListener {
 
-  public MainLoop() {
+  public MainLoop(JFrame frame) {
     addMouseListener(this);
-    addKeyListener(this);
+    frame.addKeyListener(this);
   }
 
   int mousepressedx = 0;
@@ -83,17 +83,17 @@ public class MainLoop extends JPanel implements MouseListener, KeyListener {
 
   @Override
   public void keyPressed(KeyEvent arg0) {
-    MainLoop.keysPressed.add(arg0.getKeyChar());
+    // MainLoop.keysPressed.add(arg0.getKeyChar());
   }
 
   @Override
   public void keyReleased(KeyEvent arg0) {
-    MainLoop.keysPressed.remove(arg0.getKeyChar());
+    // MainLoop.keysPressed.remove(arg0.getKeyChar());
   }
 
   @Override
   public void keyTyped(KeyEvent arg0) {
-    System.out.print(arg0.getKeyChar());
+    System.out.println(arg0.getKeyChar());
   }
 
   static Tile[][] tilegrid = new Tile[0][0];
@@ -523,9 +523,8 @@ public class MainLoop extends JPanel implements MouseListener, KeyListener {
         }
       } else {
         if (setting == bob.Setting() && TILESIZE * 80 > distance) {
-          bob
-              .Activate(); // if it is in the same setting and the distance is less than 100 tiles,
-                           // it will reactivate
+          bob.Activate(); // if it is in the same setting and the distance is less than 100 tiles,
+          // it will reactivate
         }
       }
 
@@ -1068,7 +1067,7 @@ public class MainLoop extends JPanel implements MouseListener, KeyListener {
 
   public static void main(String[] args) throws InterruptedException {
     JFrame frame = new JFrame("game");
-    MainLoop game = new MainLoop();
+    MainLoop game = new MainLoop(frame);
     frame.setSize(1070, 700);
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -636,7 +636,7 @@ public class UsefulMethods {
       for (Point key :
           MainLoop.Dungeons
               .keySet()) // iterating through hashmap. I dont know why I even decided to use a
-                         // hashmap. But it works and I'm too lazy to change it
+      // hashmap. But it works and I'm too lazy to change it
       {
         Dungeon activeDungeon = MainLoop.Dungeons.get(key);
         bw.write("{");

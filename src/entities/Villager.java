@@ -123,7 +123,7 @@ public class Villager {
               + "le have forgotten and to speak what I have learned so t<br>"
               + "hat others may know it.") {
         String[] thingsyoucouldsay = {
-            /*"A hero with a capital \"H\" or a lowercase \"h\"?",*/
+          /*"A hero with a capital \"H\" or a lowercase \"h\"?",*/
           "Maybe I am one."
         };
         String wizardanswer =
